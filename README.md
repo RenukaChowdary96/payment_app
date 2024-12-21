@@ -4,7 +4,7 @@
 
 This is how my landing page looks like:
 
-![Landing Page Screenshot](./images/output.png)
+![Landing Page Screenshot]("C:\Users\win11\OneDrive\Desktop\paytm_clone\paytm-mern-clone\src\images\logo_1.avif")
 
  # Getting Started with Create React App
 
