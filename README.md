@@ -1,4 +1,12 @@
-# Getting Started with Create React App
+ output :
+ this is how my landing page looks like:
+ ## Output
+
+This is how my landing page looks like:
+
+![Landing Page Screenshot](./images/output.png)
+
+ # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
