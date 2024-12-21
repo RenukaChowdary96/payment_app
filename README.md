@@ -3,9 +3,7 @@
  ## Output
  ![ouput](https://github.com/user-attachments/assets/2fee127a-6eeb-4c52-ba72-3054f07d03ba)
 
-This is how my landing page looks like:
 
-![Landing Page Screenshot]("C:\Users\win11\OneDrive\Desktop\paytm_clone\paytm-mern-clone\src\images\logo_1.avif")
 
  # Getting Started with Create React App
 
