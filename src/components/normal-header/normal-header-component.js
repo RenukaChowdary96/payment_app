@@ -1,5 +1,5 @@
 import React from "react";
-import logo from "../../images/logo.svg";
+import logo from "../../images/logo.svg"; // Ensure this path is correct for your logo image
 
 const NormalHeader = () => {
   return (

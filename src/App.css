@@ -35,46 +35,48 @@
   object-fit: contain; /* Ensure image scales well */
 }
 
-/* Header Styles */
-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 10px 20px;
-  background-color: #fff; /* White background */
-  border-bottom: 1px solid #ddd; /* Subtle bottom border */
-}
-
-header a {
-  margin: 0 10px;
-  text-decoration: none;
-  color: #007bff; /* Paytm-like blue */
+/* Button Styling */
+.download-btn {
+  background-color: #000000; /* Black background */
+  color: white;
+  padding: 15px 30px;
   font-size: 1rem;
-  font-weight: bold;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 30px;
+  transition: background-color 0.3s ease-in-out;
 }
 
-header a:hover {
-  text-decoration: underline;
+.download-btn:hover {
+  background-color: #333333; /* Darker black on hover */
 }
 
-/* Footer Section */
-.footer {
+/* Download Page Styling */
+.download-container {
   text-align: center;
-  margin-top: 20px;
-  padding: 20px;
-  background-color: #f9f9f9;
+  padding: 50px;
 }
 
-.footer h2 {
-  font-size: 2rem;
-  margin-bottom: 10px;
-  color: #333;
+.download-link-container {
+  margin-top: 30px;
 }
 
-.footer p {
+.download-link {
+  display: inline-block;
+  padding: 15px 30px;
+  background-color:black;
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
   font-size: 1rem;
-  color: #555;
+  transition: background-color 0.3s ease-in-out;
 }
+
+.download-link:hover {
+  background-color: #0056b3; /* Darker blue on hover */
+}
+
 /* Navigation Bar */
 nav {
   display: flex;
@@ -132,44 +134,51 @@ nav .auth-buttons a:hover {
   background-color: #007bff;
   color: #ffffff;
 }
-
-/* Main Content Layout */
-.main-content {
-  display: flex;
-  justify-content: space-between;
-  padding: 20px 40px;
-  gap: 20px; /* Space between left and right sides */
+/* Landing Page Left Section - Adjust Image Size */
+.content-left .content-image {
+  max-width: 10%;  /* Set the maximum width to 80% to reduce the image size */
+  height: auto; /* Maintain aspect ratio */
+  margin-bottom: 20px; /* Add some space below the image */
+}
+/* Download Page Background Image */
+.download-container {
+  background-image: url("C:\Users\win11\OneDrive\Desktop\paytm\paytm_clone\src\images\bg.webp"); /* Replace with your actual background image URL */
+  background-size: cover; /* Make sure the image covers the entire area */
+  background-position: center; /* Center the image */
+  padding: 50px; /* Space inside the container */
+  text-align: center; /* Center the text */
+  color: white; /* Ensure text is readable on top of the background */
 }
 
-.content-left,
-.content-right {
-  flex: 1; /* Ensure both sides take equal width */
-  display: flex;
-  flex-direction: column; /* Stack image and text vertically */
-  align-items: center;
-  text-align: center;
+/* Add some spacing and styling for the heading and paragraphs in the download page */
+.download-heading {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
 }
 
-.content-image {
-  max-width: 100%; /* Make images responsive */
-  height: auto;
-  margin-bottom: 20px; /* Add spacing below the image */
-}
-
-.content-text {
-  max-width: 400px; /* Limit text width */
-}
-
-.content-text h2 {
-  font-size: 1.8rem;
-  color: #333;
-  margin-bottom: 10px;
-}
-
-.content-text p {
-  font-size: 1rem;
-  color: #666;
+.download-paragraph {
+  font-size: 1.2rem;
   line-height: 1.6;
+  margin-bottom: 30px;
+}
+
+.download-link-container {
+  margin: 20px;
+}
+
+.download-link {
+  font-size: 1.2rem;
+  color: #007bff;
+  text-decoration: none;
+  border: 2px solid #007bff;
+  padding: 10px 20px;
+  border-radius: 5px;
+  transition: all 0.3s ease-in-out;
+}
+
+.download-link:hover {
+  background-color: #007bff;
+  color: white;
 }
 
 
@@ -184,13 +193,40 @@ nav .auth-buttons a:hover {
   .content-right {
     margin: 20px 0; /* Add spacing for stacked layout */
   }
-
-  header {
-    flex-direction: column;
-    align-items: flex-start;
-  }
-
-  header a {
-    margin: 5px 0;
-  }
 }
+
+/* Left Section Stacked Layout */
+.content-left {
+  display: flex;
+  flex-direction: column; /* Stack children vertically */
+  align-items: center; /* Center align image and text */
+  text-align: center; /* Center the text content */
+  margin: 20px; /* Add spacing around */
+}
+
+/* Image Styling */
+.content-left .content-image {
+  max-width: 80%; /* Set max width for a smaller image */
+  height: auto; /* Maintain aspect ratio */
+  margin-bottom: 20px; /* Space between image and paragraph */
+  border-radius: 8px; /* Optional rounded corners */
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2); /* Subtle shadow */
+}
+
+/* Content Text Styling */
+.content-left .content-text {
+  max-width: 400px; /* Limit text width */
+}
+
+.content-left .content-text h2 {
+  font-size: 1.8rem; /* Adjust heading size */
+  color: #333; /* Dark text */
+  margin-bottom: 10px; /* Space below heading */
+}
+
+.content-left .content-text p {
+  font-size: 1rem; /* Adjust font size for paragraph */
+  color: #666; /* Light gray text */
+  line-height: 1.6; /* Better line spacing */
+}
+

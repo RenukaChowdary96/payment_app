@@ -2,8 +2,15 @@ import React from "react";
 import NormalHeader from "../components/normal-header";
 import leftImage from "../images/left.avif"; // Replace with your left-side image
 import rightImage from "../images/right.avif"; // Replace with your right-side image
+import { useNavigate } from "react-router-dom";
 
 const LandingPage = () => {
+  const navigate = useNavigate();
+
+  const handleDownloadClick = () => {
+    navigate("/download"); // Navigate to the download page
+  };
+
   return (
     <div>
       {/* Header Section */}
@@ -14,14 +21,18 @@ const LandingPage = () => {
         {/* Left Side */}
         <div className="content-left">
           <img src={rightImage} alt="Left Side" className="content-image" />
-
-          {/* Content Below Left Image */}
           <div className="content-text">
             <h2>India's Most-loved Payments App</h2>
             <p>
               Recharge & pay bills, book flights & movie tickets, open a savings
               account, invest in stocks & mutual funds, and do a lot more.
             </p>
+          </div>
+          {/* Download Button */}
+          <div className="download-section">
+            <button onClick={handleDownloadClick} className="download-btn">
+              Download Paytm
+            </button>
           </div>
         </div>
 
