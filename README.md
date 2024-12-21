@@ -1,4 +1,11 @@
-# Getting Started with Create React App
+ output :
+ this is how my landing page looks like:
+ ## Output
+ ![ouput](https://github.com/user-attachments/assets/2fee127a-6eeb-4c52-ba72-3054f07d03ba)
+
+
+
+ # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
