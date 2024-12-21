@@ -1,6 +1,7 @@
  output :
  this is how my landing page looks like:
  ## Output
+ ![ouput](https://github.com/user-attachments/assets/2fee127a-6eeb-4c52-ba72-3054f07d03ba)
 
 This is how my landing page looks like:
 
