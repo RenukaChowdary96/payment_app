@@ -1,8 +1,9 @@
-import React from "react";
-import NormalHeader from "../components/normal-header";
-import leftImage from "../images/left.avif"; // Replace with your left-side image
-import rightImage from "../images/right.avif"; // Replace with your right-side image
-import { useNavigate } from "react-router-dom";
+// src/pages/LandingPage.js
+import React from 'react';
+import NormalHeader from '../components/normal-header/normal-header-component';
+import leftImage from "../images/left.avif"; // Left-side image
+import rightImage from "../images/right.avif"; // Right-side image
+import { useNavigate } from 'react-router-dom';
 
 const LandingPage = () => {
   const navigate = useNavigate();

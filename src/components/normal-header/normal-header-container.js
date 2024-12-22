@@ -1,9 +1,8 @@
-import React from 'react';
-import NormalHeaderComponent from "./normal-header-component";
+import React from "react";
+import NormalHeader from "./normal-header-component";
 
 const NormalHeaderContainer = () => {
-    return <NormalHeaderComponent />;
+  return <NormalHeader />;
 };
 
 export default NormalHeaderContainer;
-

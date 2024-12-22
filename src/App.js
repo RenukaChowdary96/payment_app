@@ -1,20 +1,23 @@
-import React from 'react';
+import React from "react";
 import './App.css';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'; // Import from react-router-dom v6
-import LandingPage from './pages/landing-page';
-import DownloadPage from './pages/download';  // Update the filename to 'download.js'
+
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import LandingPage from "./pages/landing-page";
+import MobileRechargePage from "./pages/mobilerechargepage";
+import SignInPage from "./pages/siginpage";
+import TransferPage from "./pages/Transferpage";
+import DownloadPage from "./pages/download";
 
 function App() {
   return (
     <Router>
       <div className="container">
-        {/* Routes setup in React Router v6 */}
         <Routes>
-          {/* Define route for landing page */}
           <Route path="/" element={<LandingPage />} />
-          
-          {/* Define route for download page */}
-          <Route path="/download" element={<DownloadPage />} />
+          <Route path="/mobile-recharge" element={<MobileRechargePage />} />
+          <Route path="/signin" element={<SignInPage />} />
+          <Route path="/transfer" element={<TransferPage />} />
+          <Route path="/download" element={<DownloadPage />} /> {/* Add the download route */}
         </Routes>
       </div>
     </Router>

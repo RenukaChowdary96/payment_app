@@ -229,4 +229,283 @@ nav .auth-buttons a:hover {
   color: #666; /* Light gray text */
   line-height: 1.6; /* Better line spacing */
 }
+/* General Flexbox Layout */
+.flex {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 0 auto;
+}
+
+/* Main Content Styling */
+.main-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  padding: 50px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Button Styling */
+.download-btn, .otp-btn, .login-btn, .recharge-btn, .transfer-btn {
+  background-color: #000000;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 20px;
+}
+
+.download-btn:hover, .otp-btn:hover, .login-btn:hover, .recharge-btn:hover, .transfer-btn:hover {
+  background-color: #333333;
+}
+
+/* Form Styling */
+.recharge-form, .sign-in-container, .transfer-form {
+  display: flex;
+  flex-direction: column;
+  width: 300px;
+  margin: 0 auto;
+}
+
+.recharge-form input, .sign-in-container input, .transfer-form input {
+  padding: 10px;
+  margin: 10px 0;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+/* General Flexbox Layout */
+.flex {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 0 auto;
+}
+
+/* Main Content Styling */
+.main-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  padding: 50px;
+  max-width: 1200px; /* Limit width for proper alignment */
+  margin: 0 auto; /* Center the content */
+}
+
+/* Left and Right Containers */
+.content-left,
+.content-right {
+  flex: 1; /* Equal space for both sides */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 10px; /* Add some spacing */
+}
+
+/* Image Styling */
+.content-image {
+  max-width: 100%; /* Adjust the image to the container */
+  height: auto;
+  border-radius: 8px; /* Optional rounded corners */
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2); /* Add subtle shadow */
+  object-fit: contain; /* Ensure image scales well */
+}
+
+/* Button Styling */
+.download-btn {
+  background-color: #000000; /* Black background */
+  color: white;
+  padding: 15px 30px;
+  font-size: 1rem;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 30px;
+  transition: background-color 0.3s ease-in-out;
+}
+
+.download-btn:hover {
+  background-color: #333333; /* Darker black on hover */
+}
+
+/* Download Page Styling */
+.download-container {
+  text-align: center;
+  padding: 50px;
+}
+
+.download-link-container {
+  margin-top: 30px;
+}
+
+.download-link {
+  display: inline-block;
+  padding: 15px 30px;
+  background-color: black;
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
+  font-size: 1rem;
+  transition: background-color 0.3s ease-in-out;
+}
+
+.download-link:hover {
+  background-color: #0056b3; /* Darker blue on hover */
+}
+
+/* Navigation Bar */
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 30px;
+  background-color: #ffffff; /* White background */
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+}
+
+nav .logo {
+  display: flex;
+  align-items: center;
+}
+
+nav .logo img {
+  height: 40px; /* Adjust logo size */
+  margin-right: 10px;
+}
+
+nav .menu {
+  display: flex;
+  gap: 20px; /* Even spacing between links */
+}
+
+nav .menu a {
+  text-decoration: none;
+  color: #007bff; /* Paytm-like blue */
+  font-size: 1rem;
+  font-weight: 500;
+  transition: color 0.3s ease-in-out;
+}
+
+nav .menu a:hover {
+  color: #0056b3; /* Darker blue on hover */
+}
+
+nav .auth-buttons {
+  display: flex;
+  gap: 10px; /* Space between buttons */
+}
+
+nav .auth-buttons a {
+  text-decoration: none;
+  padding: 8px 15px;
+  border: 1px solid #007bff; /* Blue border */
+  border-radius: 4px;
+  font-size: 0.9rem;
+  color: #007bff;
+  font-weight: 500;
+  transition: all 0.3s ease-in-out;
+}
+
+nav .auth-buttons a:hover {
+  background-color: #007bff;
+  color: #ffffff;
+}
+
+/* Landing Page Left Section - Adjust Image Size */
+.content-left .content-image {
+  max-width: 10%;  /* Set the maximum width to 80% to reduce the image size */
+  height: auto; /* Maintain aspect ratio */
+  margin-bottom: 20px; /* Add some space below the image */
+}
+
+/* Download Page Background Image */
+.download-container {
+  background-image: url("C:\\Users\\win11\\OneDrive\\Desktop\\paytm\\paytm_clone\\src\\images\\bg.webp"); /* Replace with your actual background image URL */
+  background-size: cover; /* Make sure the image covers the entire area */
+  background-position: center; /* Center the image */
+  padding: 50px; /* Space inside the container */
+  text-align: center; /* Center the text */
+  color: white; /* Ensure text is readable on top of the background */
+}
+
+/* Add some spacing and styling for the heading and paragraphs in the download page */
+.download-heading {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+}
+
+.download-paragraph {
+  font-size: 1.2rem;
+  line-height: 1.6;
+  margin-bottom: 30px;
+}
+
+.download-link-container {
+  margin: 20px;
+}
+
+.download-link {
+  font-size: 1.2rem;
+  color: #007bff;
+  text-decoration: none;
+  border: 2px solid #007bff;
+  padding: 10px 20px;
+  border-radius: 5px;
+  transition: all 0.3s ease-in-out;
+}
+
+.download-link:hover {
+  background-color: #007bff;
+  color: white;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .main-content {
+    flex-direction: column; /* Stack images vertically on smaller screens */
+  }
+
+  .content-left,
+  .content-right {
+    margin: 20px 0; /* Add spacing for stacked layout */
+  }
+}
+
+/* Left Section Stacked Layout */
+.content-left {
+  display: flex;
+  flex-direction: column; /* Stack children vertically */
+  align-items: center; /* Center align image and text */
+  text-align: center; /* Center the text content */
+  margin: 20px; /* Add spacing around */
+}
+
+/* Image Styling */
+.content-left .content-image {
+  max-width: 80%; /* Set max width for a smaller image */
+  height: auto; /* Maintain aspect ratio */
+  margin-bottom: 20px; /* Space between image and paragraph */
+  border-radius: 8px; /* Optional rounded corners */
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2); /* Subtle shadow */
+}
+
+/* Content Text Styling */
+.content-left .content-text {
+  max-width: 400px; /* Limit text width */
+}
+
+.content-left .content-text h2 {
+  font-size: 1.8rem; /* Adjust heading size */
+  color: #333; /* Dark text */
+  margin-bottom: 10px; /* Space below heading */
+}
+
+.content-left .content-text p {
+  font-size: 1rem; /* Adjust font size for paragraph */
+  color: #666; /* Light gray text */
+  line-height: 1.6; /* Better line spacing */
+}
+
 
