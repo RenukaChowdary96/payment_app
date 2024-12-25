@@ -7,6 +7,7 @@ import MobileRechargePage from "./pages/mobilerechargepage";
 import SignInPage from "./pages/siginpage";
 import TransferPage from "./pages/Transferpage";
 import DownloadPage from "./pages/download";
+import CheckBalancePage from "./pages/CheckBalancePage";
 
 function App() {
   return (
@@ -17,7 +18,8 @@ function App() {
           <Route path="/mobile-recharge" element={<MobileRechargePage />} />
           <Route path="/signin" element={<SignInPage />} />
           <Route path="/transfer" element={<TransferPage />} />
-          <Route path="/download" element={<DownloadPage />} /> {/* Add the download route */}
+          <Route path="/download" element={<DownloadPage />} />
+          <Route path="/check-balance" element={<CheckBalancePage />} />
         </Routes>
       </div>
     </Router>
