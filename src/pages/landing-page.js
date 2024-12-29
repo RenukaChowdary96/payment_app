@@ -1,4 +1,3 @@
-// src/pages/LandingPage.js
 import React from 'react';
 import NormalHeader from '../components/normal-header/normal-header-component';
 import leftImage from "../images/left.avif"; // Left-side image
@@ -29,20 +28,16 @@ const LandingPage = () => {
               account, invest in stocks & mutual funds, and do a lot more.
             </p>
           </div>
-          {/* Download Button */}
-          <div className="download-section">
+          {/* Buttons Section */}
+          <div className="button-section">
             <button onClick={handleDownloadClick} className="download-btn">
               Download Paytm
             </button>
+            <button onClick={() => navigate("/signin")} className="sign-in-btn">
+              Sign In
+            </button>
           </div>
         </div>
-        <div className="button-group">
-  
-  <button onClick={() => navigate("/signin")} className="sign-in-btn">
-    Sign In
-  </button>
-</div>
-
 
         {/* Right Side */}
         <div className="content-right">

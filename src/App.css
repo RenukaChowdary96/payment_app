@@ -894,11 +894,35 @@ nav .auth-buttons a:hover {
 }
 .sign-in-btn {
   padding: 10px 20px;
-  background-color: #0073e6;
+  background-color: black;
   color: #fff;
   border: none;
   cursor: pointer;
   border-radius: 5px;
+}
+/* Styling for Both Buttons in landing page */
+button.sign-in-btn, button.download-btn {
+  padding: 10px 20px;
+  background-color: black; /* Same blue color for both */
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  margin: 0 10px; /* Add margin to separate buttons */
+}
+
+/* Hover Effect for Both Buttons */
+button.sign-in-btn:hover, button.download-btn:hover {
+  background-color: #0056b3; /* Darker blue on hover */
+}
+
+/* Align Buttons Properly in Flexbox */
+.button-section {
+  display: flex;
+  justify-content: center; /* Center the buttons horizontally */
+  gap: 20px; /* Add spacing between buttons */
 }
 
 
