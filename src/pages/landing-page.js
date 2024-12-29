@@ -36,6 +36,13 @@ const LandingPage = () => {
             </button>
           </div>
         </div>
+        <div className="button-group">
+  
+  <button onClick={() => navigate("/signin")} className="sign-in-btn">
+    Sign In
+  </button>
+</div>
+
 
         {/* Right Side */}
         <div className="content-right">

@@ -1,25 +1,32 @@
 import React from "react";
-import logo from "../../images/logo.svg"; // Ensure this path is correct for your logo image
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from "react-router-dom";
+import logo from "../../images/logo.svg";
 
-const NormalHeader = () => {
+const NormalHeader = ({ isLoggedIn, setIsLoggedIn }) => {
+  const navigate = useNavigate();
+
+  const handleSignOut = () => {
+    setIsLoggedIn(false); // Log out the user
+    navigate("/"); // Redirect to landing page
+  };
+
   return (
-    <nav>
-      {/* Logo Section */}
-      <div className="logo">
-        <img src={logo} alt="Paytm Logo" />
-      </div>
+    isLoggedIn && ( // Only show the navbar if the user is logged in
+      <nav>
+        <div className="logo">
+          <img src={logo} alt="Paytm Logo" />
+        </div>
 
-      {/* Navigation Links */}
-      <div className="menu">
-        <Link to="/">Home</Link>
-        <Link to="/mobile-recharge">Mobile Recharge</Link>
-        <Link to="/transfer">Transfer</Link>
-        <Link to="/check-balance">Check Balance</Link>
-        <Link to="/signin">Sign In</Link>
-        
-      </div>
-    </nav>
+        <div className="menu">
+          <Link to="/mobile-recharge">Mobile Recharge</Link>
+          <Link to="/transfer">Transfer</Link>
+          <Link to="/check-balance">Check Balance</Link>
+          <button onClick={handleSignOut} className="signout-btn">
+            Sign Out
+          </button>
+        </div>
+      </nav>
+    )
   );
 };
 

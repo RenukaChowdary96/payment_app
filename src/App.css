@@ -887,5 +887,18 @@ nav .auth-buttons a:hover {
   }
 }
 
+/*css for sigin button*/
+.button-group {
+  display: flex;
+  gap: 10px;
+}
+.sign-in-btn {
+  padding: 10px 20px;
+  background-color: #0073e6;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+}
 
 
