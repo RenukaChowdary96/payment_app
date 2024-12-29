@@ -1,7 +1,11 @@
  output :
  this is how my landing page looks like:
  ## Output
- ![ouput](https://github.com/user-attachments/assets/2fee127a-6eeb-4c52-ba72-3054f07d03ba)
+![Screenshot (136)](https://github.com/user-attachments/assets/48a2e2ff-0dd5-4ce5-92fb-12c6346255e9)
+![Screenshot (137)](https://github.com/user-attachments/assets/730216f7-c7c7-4669-b324-db5ce56d7a5b)
+![Screenshot (138)](https://github.com/user-attachments/assets/9eeebba3-3852-452c-bffa-acac10d462bd)
+![Screenshot (140)](https://github.com/user-attachments/assets/76bcd613-d355-4642-8323-a7dd3950c354)
+![Screenshot (141)](https://github.com/user-attachments/assets/af0dd025-4f24-4a26-80ed-31a39f1396b0)
 
 
 
