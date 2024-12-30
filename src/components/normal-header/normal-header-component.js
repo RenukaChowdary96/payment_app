@@ -21,6 +21,8 @@ const NormalHeader = ({ isLoggedIn, setIsLoggedIn }) => {
           <Link to="/mobile-recharge">Mobile Recharge</Link>
           <Link to="/transfer">Transfer</Link>
           <Link to="/check-balance">Check Balance</Link>
+          <Link to="/transactions">Transaction History</Link>
+
           <button onClick={handleSignOut} className="signout-btn">
             Sign Out
           </button>

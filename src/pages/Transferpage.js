@@ -2,26 +2,42 @@ import React, { useState } from "react";
 import NormalHeader from "../components/normal-header";
 import transferImage from "../images/TRANSFER PAGE.avif";
 
-
-
 const TransferPage = () => {
   const [amount, setAmount] = useState("");
   const [recipient, setRecipient] = useState("");
 
-  const handleTransfer = () => {
+  const handleTransfer = async () => {
     if (!recipient || !amount) {
       alert("Please fill in all fields.");
       return;
     }
-    alert(`Transferring ₹${amount} to ${recipient}`);
-    // Add functionality for money transfer here
+  
+    try {
+      const response = await fetch("http://localhost:5000/api/transfer", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ recipient, amount }),
+      });
+  
+      if (response.ok) {
+        const data = await response.json();
+        alert(data.message);
+      } else {
+        const error = await response.json();
+        alert(`Error: ${error.message}`);
+      }
+    } catch (error) {
+      alert(`An error occurred: ${error.message}`);
+    }
   };
+  
 
   return (
     <div>
       <NormalHeader />
       <div className="transfer-container">
-        {/* Left Section */}
         <div className="transfer-left">
           <h1>The Most Reliable UPI Payment App in the Country.</h1>
           <p>
@@ -52,7 +68,6 @@ const TransferPage = () => {
           </div>
         </div>
 
-        {/* Right Section */}
         <div className="transfer-right">
           <div className="illustration">
             <img

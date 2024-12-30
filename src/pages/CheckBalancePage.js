@@ -14,7 +14,7 @@ const CheckBalancePage = () => {
 
     // Dummy logic for fetching balance
     const dummyBalances = {
-      "9391357255": 150.5,
+      "9391357255": 1500.5,
       "9876543210": 300.75,
     };
 

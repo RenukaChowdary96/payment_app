@@ -9,6 +9,7 @@ import TransferPage from "./pages/Transferpage";
 import DownloadPage from "./pages/download";
 import CheckBalancePage from "./pages/CheckBalancePage";
 import NormalHeader from "./components/normal-header/normal-header-component";
+import TransactionHistory from "./pages/TransactionHistory";
 
 const App = () => {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
@@ -25,6 +26,7 @@ const App = () => {
         <Route path="/transfer" element={<TransferPage />} />
         <Route path="/download" element={<DownloadPage />} />
         <Route path="/check-balance" element={<CheckBalancePage />} />
+        <Route path="/transactions" element={<TransactionHistory />} />
       </Routes>
     </Router>
   );
