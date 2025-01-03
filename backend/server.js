@@ -1,14 +1,21 @@
 const express = require('express');
 const cors = require('cors');
 const mongoose = require('mongoose');
+const jwt = require('jsonwebtoken');
+const bodyParser = require('body-parser');
 const Transaction = require('./models/Transaction'); // Ensure this path is correct
+require('dotenv').config(); // Add this to load environment variables
 
 const app = express();
 const PORT = 5000;
 
+const secretKey = process.env.SECRET_KEY;
+console.log('Secret Key:', secretKey); // Log to verify the key is loaded
+
+
 // Connect to MongoDB
 mongoose
-  .connect('mongodb://localhost:27017/paytmClone', {
+  .connect('mongodb://localhost:27017/paytm_clone', {
     useNewUrlParser: true,
     useUnifiedTopology: true,
   })
@@ -22,11 +29,52 @@ mongoose
 // Middleware
 app.use(cors());
 app.use(express.json());
+app.use(bodyParser.json()); // Parse JSON bodies
 
 // Default route
 app.get('/', (req, res) => {
   res.send('Backend server is running!');
 });
+
+app.post('/send-otp', (req, res) => {
+  const { phoneNumber } = req.body;
+  console.log('Received phoneNumber:', phoneNumber); // Log to verify input
+
+  if (!phoneNumber) {
+    return res.status(400).send({ message: 'Phone number is required' });
+  }
+
+  // Simulate OTP sending logic
+  res.send({ message: `OTP sent to ${phoneNumber}` });
+});
+
+app.post('/verify-otp', (req, res) => {
+  const { phoneNumber, otp } = req.body;
+
+  try {
+    console.log('Received phoneNumber:', phoneNumber);
+    console.log('Received OTP:', otp);
+
+    if (!phoneNumber || !otp) {
+      console.error('Missing phoneNumber or otp');
+      return res.status(400).json({ message: 'Missing phoneNumber or otp' });
+    }
+
+    // Simulate OTP verification logic
+    if (otp === "123456") {
+      const token = jwt.sign({ phoneNumber }, secretKey, { expiresIn: "1h" });
+      console.log('Generated token:', token);
+      res.json({ message: "Logged in successfully", token });
+    } else {
+      console.error('Invalid OTP');
+      res.status(401).json({ message: "Invalid OTP" });
+    }
+  } catch (error) {
+    console.error('Error during OTP verification:', error.message);
+    res.status(500).json({ message: 'Internal Server Error', error: error.message });
+  }
+});
+
 
 // Transfer API Route
 app.post('/api/transfer', async (req, res) => {
@@ -35,6 +83,17 @@ app.post('/api/transfer', async (req, res) => {
   // Validate request body
   if (!recipient || !amount) {
     return res.status(400).json({ message: 'Recipient and amount are required.' });
+  }
+
+  // Simple validation for recipient phone number format (basic example)
+  const phoneRegex = /^[0-9]{10}$/;
+  if (!phoneRegex.test(recipient)) {
+    return res.status(400).json({ message: 'Invalid phone number format.' });
+  }
+
+  // Validate amount
+  if (isNaN(amount) || amount <= 0) {
+    return res.status(400).json({ message: 'Amount should be a valid number greater than 0.' });
   }
 
   try {

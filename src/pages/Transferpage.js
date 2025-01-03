@@ -11,28 +11,43 @@ const TransferPage = () => {
       alert("Please fill in all fields.");
       return;
     }
-  
+
+    // Validate the recipient phone number (simple example)
+    const phoneRegex = /^[0-9]{10}$/;
+    if (!phoneRegex.test(recipient)) {
+      alert("Please enter a valid 10-digit phone number.");
+      return;
+    }
+
+    // Validate the amount
+    if (isNaN(amount) || amount <= 0) {
+      alert("Please enter a valid amount.");
+      return;
+    }
+
     try {
+      // Make a POST request to the API
       const response = await fetch("http://localhost:5000/api/transfer", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
         },
-        body: JSON.stringify({ recipient, amount }),
+        body: JSON.stringify({ recipient, amount }), // Send recipient and amount
       });
-  
+
+      const data = await response.json();
       if (response.ok) {
-        const data = await response.json();
-        alert(data.message);
+        alert(data.message); // Show success message
+        setAmount(""); // Clear the amount field
+        setRecipient(""); // Clear the recipient field
       } else {
-        const error = await response.json();
-        alert(`Error: ${error.message}`);
+        alert(data.message || "An error occurred");
       }
     } catch (error) {
-      alert(`An error occurred: ${error.message}`);
+      console.error("Error transferring money:", error);
+      alert("An error occurred while transferring funds.");
     }
   };
-  
 
   return (
     <div>
@@ -53,7 +68,6 @@ const TransferPage = () => {
               onChange={(e) => setRecipient(e.target.value)}
               placeholder="Recipient phone number"
             />
-
             <label>Enter Amount:</label>
             <input
               type="number"
@@ -61,7 +75,6 @@ const TransferPage = () => {
               onChange={(e) => setAmount(e.target.value)}
               placeholder="Amount to transfer"
             />
-
             <button onClick={handleTransfer} className="transfer-btn">
               Transfer
             </button>
