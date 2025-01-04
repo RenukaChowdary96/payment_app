@@ -12,24 +12,41 @@ const PORT = 5000;
 const secretKey = process.env.SECRET_KEY;
 console.log('Secret Key:', secretKey); // Log to verify the key is loaded
 
-
-// Connect to MongoDB
-mongoose
-  .connect('mongodb://localhost:27017/paytm_clone', {
-    useNewUrlParser: true,
-    useUnifiedTopology: true,
-  })
-  .then(() => {
-    console.log('Connected to MongoDB');
-  })
-  .catch((error) => {
-    console.error('Error connecting to MongoDB:', error);
-  });
-
 // Middleware
 app.use(cors());
 app.use(express.json());
 app.use(bodyParser.json()); // Parse JSON bodies
+
+// MongoDB connection and event handling
+mongoose.set('strictQuery', false); // Optional: depending on your mongoose version
+
+mongoose
+  .connect('mongodb://127.0.0.1:27017/paytm_clone', {
+    serverSelectionTimeoutMS: 30000, // Timeout after 30 seconds
+  })
+  .then(() => {
+    console.log('Connected to MongoDB');
+    // Start the server only after successful DB connection
+    app.listen(PORT, () => {
+      console.log(`Server is running on port ${PORT}`);
+    });
+  })
+  .catch((error) => {
+    console.error('Error connecting to MongoDB:', error);
+    process.exit(1); // Exit process if DB connection fails
+  });
+
+mongoose.connection.on('connected', () => {
+  console.log('Mongoose connected to MongoDB');
+});
+
+mongoose.connection.on('error', (err) => {
+  console.error('Mongoose connection error:', err);
+});
+
+mongoose.connection.on('disconnected', () => {
+  console.log('Mongoose disconnected from MongoDB');
+});
 
 // Default route
 app.get('/', (req, res) => {
@@ -75,7 +92,6 @@ app.post('/verify-otp', (req, res) => {
   }
 });
 
-
 // Transfer API Route
 app.post('/api/transfer', async (req, res) => {
   const { recipient, amount } = req.body;
@@ -119,9 +135,4 @@ app.get('/api/transactions', async (req, res) => {
     console.error('Error fetching transactions:', error);
     res.status(500).json({ message: 'An error occurred while fetching transactions.' });
   }
-});
-
-// Start the server
-app.listen(PORT, () => {
-  console.log(`Server is running on port ${PORT}`);
 });
