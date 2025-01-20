@@ -142,7 +142,8 @@ nav .auth-buttons a:hover {
 }
 /* Download Page Background Image */
 .download-container {
-  background-image: url("C:\Users\win11\OneDrive\Desktop\paytm\paytm_clone\src\images\bg.webp"); /* Replace with your actual background image URL */
+  background-image: url('/images/bg.webp');
+/* Replace with your actual background image URL */
   background-size: cover; /* Make sure the image covers the entire area */
   background-position: center; /* Center the image */
   padding: 50px; /* Space inside the container */
@@ -422,7 +423,7 @@ nav .auth-buttons a:hover {
 
 /* Download Page Background Image */
 .download-container {
-  background-image: url("C:\\Users\\win11\\OneDrive\\Desktop\\paytm\\paytm_clone\\src\\images\\bg.webp"); /* Replace with your actual background image URL */
+  background-image: url('./images/bg.webp'); /* Replace with your actual background image URL */
   background-size: cover; /* Make sure the image covers the entire area */
   background-position: center; /* Center the image */
   padding: 50px; /* Space inside the container */
