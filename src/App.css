@@ -140,16 +140,7 @@ nav .auth-buttons a:hover {
   height: auto; /* Maintain aspect ratio */
   margin-bottom: 20px; /* Add some space below the image */
 }
-/* Download Page Background Image */
-.download-container {
-  background-image: url('/images/bg.webp');
-/* Replace with your actual background image URL */
-  background-size: cover; /* Make sure the image covers the entire area */
-  background-position: center; /* Center the image */
-  padding: 50px; /* Space inside the container */
-  text-align: center; /* Center the text */
-  color: white; /* Ensure text is readable on top of the background */
-}
+
 
 /* Add some spacing and styling for the heading and paragraphs in the download page */
 .download-heading {
@@ -421,15 +412,7 @@ nav .auth-buttons a:hover {
   margin-bottom: 20px; /* Add some space below the image */
 }
 
-/* Download Page Background Image */
-.download-container {
-  background-image: url('./images/bg.webp'); /* Replace with your actual background image URL */
-  background-size: cover; /* Make sure the image covers the entire area */
-  background-position: center; /* Center the image */
-  padding: 50px; /* Space inside the container */
-  text-align: center; /* Center the text */
-  color: white; /* Ensure text is readable on top of the background */
-}
+
 
 /* Add some spacing and styling for the heading and paragraphs in the download page */
 .download-heading {
