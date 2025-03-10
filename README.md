@@ -1,4 +1,8 @@
- output :
+
+This project is a Paytm-like application developed purely for educational purposes only. It serves as a learning tool for understanding payment gateway integration, JWT authentication, transaction history, and database management.
+
+## Disclaimer: This project is not affiliated with, endorsed by, or connected to Paytm in any way. All rights and trademarks belong to Paytm. 
+output :
  this is how my landing page looks like:
  ## Output
 ![Screenshot (136)](https://github.com/user-attachments/assets/48a2e2ff-0dd5-4ce5-92fb-12c6346255e9)
